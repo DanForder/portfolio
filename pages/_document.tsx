@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 export default function MyDocument() {
@@ -17,7 +18,7 @@ export default function MyDocument() {
   );
 }
 
-MyDocument.getInitialProps = async function (ctx) {
+export const getStaticProps: GetStaticProps = async (context) => {
   const initialProps = await Document.getInitialProps(ctx);
   return { ...initialProps };
 };
