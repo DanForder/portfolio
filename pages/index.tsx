@@ -6,6 +6,12 @@ const Index: NextPage = () => {
     <>
       <Metatags />
       <h1>Portfolio</h1>
+      <p>
+        Frontend Developer - Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Ab rerum aliquid placeat? Repudiandae laudantium vero at porro nam
+        praesentium, dignissimos esse eos quasi mollitia incidunt nostrum
+        magnam, nisi ab tempore.
+      </p>
     </>
   );
 };
