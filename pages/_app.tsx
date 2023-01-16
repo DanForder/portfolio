@@ -12,6 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         html,
         body {
           font-family: ${lato.style.fontFamily};
+          scroll-behavior: smooth;
         }
 
         h1 {
