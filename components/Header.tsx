@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ChangeEvent } from "react";
+import { useThemeContext } from "../lib/ThemeContext";
 import styles from "../styles/Header.module.scss";
 
 type HeaderProps = {
@@ -12,9 +14,22 @@ type CustomLink = {
 };
 
 const Header = ({ links }: HeaderProps) => {
+  const { theme, updateTheme } = useThemeContext();
+
+  const handleCheck = (e: ChangeEvent<HTMLInputElement>) => {
+    updateTheme(e.target.checked ? "dark" : "light");
+  };
+
   return (
     <header className={styles.container}>
       <Link href="/">Dan Forder</Link>
+      <label htmlFor="theme-toggle">Toggle Theme</label>
+      <input
+        type="checkbox"
+        id="theme-toggle"
+        onChange={handleCheck}
+        checked={theme === "dark"}
+      />
       <nav className={styles.navbar}>
         <ul>
           {links.map(({ text, href, icon }) => (

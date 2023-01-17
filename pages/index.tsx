@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
 import Header from "../components/Header";
+import Layout from "../components/Layout";
 import Metatags from "../components/Metatags";
 
 const Index: NextPage = () => {
   return (
-    <>
+    <Layout>
       <Metatags />
       <Header
         links={[
@@ -20,7 +21,7 @@ const Index: NextPage = () => {
         praesentium, dignissimos esse eos quasi mollitia incidunt nostrum
         magnam, nisi ab tempore.
       </p>
-      <h2 id="speaking">speaking</h2>
+      <h2 id="about">about</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem minima
         quis provident architecto voluptatem sed similique ad, reprehenderit,
@@ -33,7 +34,7 @@ const Index: NextPage = () => {
         esse id culpa accusamus illum amet ut earum quaerat ipsa odio
         exercitationem?
       </p>
-      <h2 id="writing">writing</h2>
+      <h2 id="projects">projects</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem minima
         quis provident architecto voluptatem sed similique ad, reprehenderit,
@@ -46,7 +47,7 @@ const Index: NextPage = () => {
         esse id culpa accusamus illum amet ut earum quaerat ipsa odio
         exercitationem?
       </p>
-      <h2 id="playing">playing</h2>
+      <h2 id="contact">contact</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem minima
         quis provident architecto voluptatem sed similique ad, reprehenderit,
@@ -59,20 +60,7 @@ const Index: NextPage = () => {
         esse id culpa accusamus illum amet ut earum quaerat ipsa odio
         exercitationem?
       </p>
-      <h2 id="workshop">workshop</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem minima
-        quis provident architecto voluptatem sed similique ad, reprehenderit,
-        esse id culpa accusamus illum amet ut earum quaerat ipsa odio
-        exercitationem?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem minima
-        quis provident architecto voluptatem sed similique ad, reprehenderit,
-        esse id culpa accusamus illum amet ut earum quaerat ipsa odio
-        exercitationem?
-      </p>
-    </>
+    </Layout>
   );
 };
 
