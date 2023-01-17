@@ -1,7 +1,7 @@
 import { Lato, Playfair_Display } from "@next/font/google";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "../lib/ThemeContext";
-import "../styles/Globals.scss";
+import "../styles/globals.scss";
 
 const lato = Lato({ weight: "700", display: "swap" });
 const playFairDisplay = Playfair_Display({ weight: "700", display: "swap" });

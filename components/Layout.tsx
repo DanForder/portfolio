@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import styles from "../styles/Layout.module.scss";
+import styles from "../styles/layout.module.scss";
 
 type LayoutProps = {};
 
