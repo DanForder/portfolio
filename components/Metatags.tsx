@@ -3,7 +3,7 @@ import Head from "next/head";
 export const Metatags = ({
   title = "Dan Forder Portfolio",
   description = "Dan Forder developer portfolio",
-  image = "https://i1.sndcdn.com/avatars-000560619042-lx4caj-t500x500.jpg",
+  image = "https://pbs.twimg.com/profile_images/1615743115624677378/8H4gC86W_400x400.jpg",
 }) => {
   return (
     <Head>
@@ -13,7 +13,7 @@ export const Metatags = ({
       {/* Icon */}
       <link
         rel="icon"
-        href="https://i1.sndcdn.com/avatars-000560619042-lx4caj-t500x500.jpg"
+        href="https://pbs.twimg.com/profile_images/1615743115624677378/8H4gC86W_400x400.jpg"
       />
 
       {/* Metatags */}
