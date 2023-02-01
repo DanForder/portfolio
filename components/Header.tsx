@@ -24,20 +24,9 @@ const Header = ({ links }: HeaderProps) => {
 
   return (
     <header className={styles.container}>
-      <Link href="/">🏠</Link>
-      <Toggle
-        id="theme-toggle"
-        onClick={handleCheck}
-        label={"Toggle Theme"}
-        toggled={theme === "dark"}
-      />
-      {/* <label htmlFor="theme-toggle">Toggle Theme</label>
-      <input
-        type="checkbox"
-        id="theme-toggle"
-        onChange={handleCheck}
-        checked={theme === "dark"}
-      /> */}
+      <Link className={styles.homeLink} href="/">
+        🏠
+      </Link>
       <nav className={styles.navbar}>
         <ul>
           {links.map(({ text, href, icon }) => (
@@ -50,6 +39,12 @@ const Header = ({ links }: HeaderProps) => {
           ))}
         </ul>
       </nav>
+      <Toggle
+        id="theme-toggle"
+        onClick={handleCheck}
+        label={"Toggle Theme"}
+        toggled={theme === "dark"}
+      />
     </header>
   );
 };
