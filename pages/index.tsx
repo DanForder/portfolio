@@ -6,6 +6,8 @@ import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import Metatags from "../components/Metatags";
+import Project from "../components/Project";
+import { generateUniqueId } from "../lib/commonUtils";
 import styles from "../styles/index.module.scss";
 
 const Index: NextPage = () => {
@@ -94,7 +96,10 @@ const Index: NextPage = () => {
             <p>
               Hey 👋 I&apos;m Dan. I&apos;m a frontend developer and software
               coach. Currently breaking down barriers and getting career
-              changers into tech with <a href="https://nology.io/">nology.io</a>
+              changers into tech with{" "}
+              <a href="https://nology.io/" target="_blank" rel="noreferrer">
+                nology.io
+              </a>
             </p>
           </AnimatedText>
           <AnimatedText>
@@ -108,7 +113,11 @@ const Index: NextPage = () => {
             <p>
               In my spare time I run Ultra Marathons and play Ultimate Frisbee
               with{" "}
-              <a href="https://www.instagram.com/bristolopenultimate/">
+              <a
+                href="https://www.instagram.com/bristolopenultimate/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Bristol Open
               </a>{" "}
               (and I&apos;m willing to talk your ears off about either!)
@@ -127,118 +136,161 @@ const Index: NextPage = () => {
 
       <section className={styles.projects} id="projects">
         <AnimatedText>
-          <h2>projects</h2>
+          <div className={styles.projectIntro}>
+            <h2>projects</h2>
+            <p>
+              Most of the projects I&apos;ve worked on professionally are not
+              public sites, but I&apos;d be more than happy to talk about the
+              products and my role more in-depth upon request.
+            </p>
+          </div>
         </AnimatedText>
-        <AnimatedText>
-          <p>
-            Most of the projects I&apos;ve worked on professionally are not
-            public sites, but I&apos;d be more than happy to talk about the
-            products and my role more in-depth upon request.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <h3>Working for Nology - Frontend Software Curriculum</h3>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            At nology, I am a senior software coach and product owner for the
-            frontend curriculum. I was responsible for developing or creating
-            the first 6 weeks of our 12-week software engineering program.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            This work includes creating content (code-based slide decks,
-            challenges, codealongs, project briefs), but most importantly
-            documenting the process of delivering the content as a coach.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <h3>Working for Good Energy - Online Account</h3>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            <a href="https://www.goodenergy.co.uk/">Good Energy</a> is a
-            renewable energy company based in Chippenham, UK. During my time
-            here, some of my highlights included advocating for and then
-            creating the first iteration of a component library (shared across
-            the UX and Dev teams), and leading an overhaul to implement major
-            accessibility changes to the online account portal.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            The tech stack I used here was React (TypeScript) for the frontend,
-            and .NET Core (C#) for the backend, as well as working with
-            event-driven Azure Functions.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <h3>Working for QES - Triangle Star Online</h3>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            <a href="https://www.qes-online.co.uk/">QES Online</a> is a software
-            solutions company based in Bristol, UK. During my time working here,
-            I primarily worked on{" "}
-            <a href="https://www.outcomesstar.org.uk/about-the-star/star-online-and-other-software/">
-              Star Online
-            </a>{" "}
-            for a client (
-            <a href="https://www.outcomesstar.org.uk/about-triangle/">
-              Triangle
-            </a>
-            ). The application helps frontline workers create &quot;Outcome
-            Stars&quot;, a tool to support and measure change working with
-            vulnerable people.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            My role was a fullstack developer here, but I was also responsible
-            for interacting with the client, managing stakeholder expectations,
-            and leading sprints.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <h3>Promptr</h3>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            <a href="https://promptr.vercel.app/sign-up">Promptr</a> is a tool I
-            created to help create and generate icebreaker questions for student
-            standups at nology. You can sign up to add your own prompts, as well
-            as generate random ones.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <h3>Castle Wars</h3>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            <a href="https://danforder.github.io/castle-wars/home">
-              Castle Wars
-            </a>{" "}
-            is a react version of the popular flash game from 2007. Each player
-            has a castle and a set of cards, and the objective is to destroy the
-            opposing castle.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <h3>Nonogram Puzzler</h3>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            <a href="https://danforder.github.io/nonogram/">Nonogram Puzzler</a>{" "}
-            is a project I worked on when I was a bit obsessed with nonogram
-            games like{" "}
-            <a href="https://play.google.com/store/apps/details?id=com.appynation.wbpc&hl=en_GB&gl=US&pli=1">
-              Picture Cross
-            </a>
-            . I recreated the functionality using React and designed a few
-            levels as a proof of concept.
-          </p>
-        </AnimatedText>
+
+        <div className={styles.container}>
+          <Project
+            heading="Working for Nology - Frontend Software Curriculum"
+            paragraphs={[
+              <p key={generateUniqueId()}>
+                At{" "}
+                <a href="https://nology.io/" target="_blank" rel="noreferrer">
+                  nology.io
+                </a>
+                , I am a senior software coach and product owner for the
+                frontend curriculum. I was responsible for developing or
+                creating the first 6 weeks of our 12-week software engineering
+                program.
+              </p>,
+              <p key={generateUniqueId()}>
+                This work includes creating content (code-based slide decks,
+                challenges, codealongs, project briefs), but most importantly
+                documenting the process of delivering the content as a coach.
+              </p>,
+            ]}
+          />
+          <Project
+            heading="Working for Good Energy - Online Account"
+            paragraphs={[
+              <p key={generateUniqueId()}>
+                <a
+                  href="https://www.goodenergy.co.uk/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Good Energy
+                </a>{" "}
+                is a renewable energy company based in Chippenham, UK. During my
+                time here, some of my highlights included advocating for and
+                then creating the first iteration of a component library (shared
+                across the UX and Dev teams), and leading an overhaul to
+                implement major accessibility changes to the online account
+                portal.
+              </p>,
+              <p key={generateUniqueId()}>
+                The tech stack I used here was React (TypeScript) for the
+                frontend, and .NET Core (C#) for the backend, as well as working
+                with event-driven Azure Functions.
+              </p>,
+            ]}
+          />
+          <Project
+            heading="Working for QES - Triangle Star Online"
+            paragraphs={[
+              <p key={generateUniqueId()}>
+                <a
+                  href="https://www.qes-online.co.uk/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  QES Online
+                </a>{" "}
+                is a software solutions company based in Bristol, UK. During my
+                time working here, I primarily worked on{" "}
+                <a
+                  href="https://www.outcomesstar.org.uk/about-the-star/star-online-and-other-software/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Star Online
+                </a>{" "}
+                for a client (
+                <a
+                  href="https://www.outcomesstar.org.uk/about-triangle/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Triangle
+                </a>
+                ). The application helps frontline workers create &quot;Outcome
+                Stars&quot;, a tool to support and measure change working with
+                vulnerable people.
+              </p>,
+              <p key={generateUniqueId()}>
+                My role was a fullstack developer here, but I was also
+                responsible for interacting with the client, managing
+                stakeholder expectations, and leading sprints.
+              </p>,
+            ]}
+          />
+          <Project
+            heading="Promptr"
+            paragraphs={[
+              <p key={generateUniqueId()}>
+                <a
+                  href="https://promptr.vercel.app/sign-up"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Promptr
+                </a>{" "}
+                is a tool I created to help create and generate icebreaker
+                questions for student standups at nology. You can sign up to add
+                your own prompts, as well as generate random ones.
+              </p>,
+            ]}
+          />
+          <Project
+            heading="Castle Wars"
+            paragraphs={[
+              <p key={generateUniqueId()}>
+                <a
+                  href="https://danforder.github.io/castle-wars/home"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Castle Wars
+                </a>{" "}
+                is a react version of the popular flash game from 2007. Each
+                player has a castle and a set of cards, and the objective is to
+                destroy the opposing castle.
+              </p>,
+            ]}
+          />
+          <Project
+            heading="Nonogram Puzzler"
+            paragraphs={[
+              <p key={generateUniqueId()}>
+                <a
+                  href="https://danforder.github.io/nonogram/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Nonogram Puzzler
+                </a>{" "}
+                is a project I worked on when I was a bit obsessed with nonogram
+                games like{" "}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.appynation.wbpc&hl=en_GB&gl=US&pli=1"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Picture Cross
+                </a>
+                . I recreated the functionality using React and designed a few
+                levels as a proof of concept.
+              </p>,
+            ]}
+          />
+        </div>
       </section>
 
       <section className={styles.contact} id="contact">
@@ -252,7 +304,13 @@ const Index: NextPage = () => {
               danfrdr@gmail.com
             </a>
             . Or on Linkedin at{" "}
-            <a href="https://www.linkedin.com/in/dan-forder/">dan-forder</a>
+            <a
+              href="https://www.linkedin.com/in/dan-forder/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              dan-forder
+            </a>
           </p>
         </AnimatedText>
       </section>

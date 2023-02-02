@@ -33,6 +33,15 @@
   }
 }
 
+.projects {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .hero {
     display: grid;
@@ -69,6 +78,13 @@
     }
   }
 
+  .about,
+  .projects,
+  .contact {
+    margin-top: 1rem;
+    padding-top: 4rem;
+  }
+
   .about {
     max-width: 60rem;
     display: grid;
@@ -90,10 +106,28 @@
     }
   }
 
-  .about,
-  .projects,
-  .contact {
-    margin-top: 1rem;
-    padding-top: 4rem;
+  .projects {
+    .projectIntro {
+      text-align: center;
+      max-width: 40rem;
+      margin: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    .container {
+      gap: 3rem;
+
+      > * {
+        max-width: 50%;
+
+        &:nth-child(even) {
+          transform: translateX(-25%);
+        }
+
+        &:nth-child(odd) {
+          transform: translateX(25%);
+        }
+      }
+    }
   }
 }
