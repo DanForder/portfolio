@@ -1,11 +1,20 @@
-.wrapper {
-  padding: 1rem 1.5rem 5.5rem 1.5rem;
+.outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--color-background);
-  min-height: 100vh;
+
+  .wrapper {
+    padding: 1rem 1.5rem 5.5rem 1.5rem;
+    min-height: 100vh;
+    max-width: 1500px;
+  }
 }
 
 @media screen and (min-width: 800px) {
-  .wrapper {
-    padding-bottom: 1rem;
+  .outer {
+    .wrapper {
+      padding-bottom: 1rem;
+    }
   }
 }

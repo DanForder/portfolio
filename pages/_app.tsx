@@ -16,7 +16,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           scroll-behavior: smooth;
         }
 
-        h1 {
+        h1,
+        .sansSerif {
           font-family: ${playFairDisplay.style.fontFamily};
         }
       `}</style>

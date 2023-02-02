@@ -27,6 +27,7 @@ const Header = ({ links }: HeaderProps) => {
       <Link className={styles.homeLink} href="/">
         🏠
       </Link>
+      <span className={styles.mainText + " " + "sansSerif"}>Dan Forder</span>
       <nav className={styles.navbar}>
         <ul>
           {links.map(({ text, href, icon }) => (
