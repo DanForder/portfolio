@@ -39,3 +39,9 @@ a {
     background: black;
   }
 }
+
+@media screen and (min-width: 800px) {
+  :root {
+    font-size: 120%;
+  }
+}

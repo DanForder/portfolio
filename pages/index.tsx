@@ -6,10 +6,10 @@ import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import Metatags from "../components/Metatags";
+import styles from "../styles/index.module.scss";
 
 const Index: NextPage = () => {
-  const img1Ref = useRef<HTMLImageElement>(null);
-  const img2Ref = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   const getXToCenterOfParent = (child: HTMLElement): number => {
     if (!child.parentElement) return 0;
@@ -54,11 +54,11 @@ const Index: NextPage = () => {
       gsap.registerPlugin(ScrollTrigger);
     }
 
-    if (img1Ref.current === null) return;
-    fadeIn(img1Ref.current, 2);
-
-    if (img2Ref.current === null) return;
-    animateToCenter("x", img2Ref.current);
+    const mm = gsap.matchMedia();
+    mm.add("(max-width:799px)", () => {
+      if (imgRef.current === null) return;
+      animateToCenter("x", imgRef.current);
+    });
   }, []);
 
   return (
@@ -71,64 +71,63 @@ const Index: NextPage = () => {
           { text: "contact", href: "contact", icon: "🤙" },
         ]}
       />
-      <section>
-        <h1>Dan Forder</h1>
-        <p>Frontend Developer & Coach</p>
+      <AnimatedText>
+        <section className={styles.hero}>
+          <h1 className={styles.heading}>dan forder</h1>
+          <p className={styles.tagline}>frontend developer & coach</p>
+
+          <img
+            src="/whangerei-heads.jpg"
+            alt="Dan sitting atop Whangerei Heads wearing frisbee kit looking to the sea"
+            width="100%"
+            className={styles.image}
+          />
+        </section>
+      </AnimatedText>
+
+      <section className={styles.about} id="about">
+        <div className={styles.aboutText}>
+          <AnimatedText>
+            <h2>about</h2>
+          </AnimatedText>
+          <AnimatedText>
+            <p>
+              Hey 👋 I&apos;m Dan. I&apos;m a frontend developer and software
+              coach. Currently breaking down barriers and getting career
+              changers into tech with <a href="https://nology.io/">nology.io</a>
+            </p>
+          </AnimatedText>
+          <AnimatedText>
+            <p>
+              I advocate for greater awareness of mental health in the
+              workplace, and creating an inclusive environment where
+              neurodivergent people can be their whole selves.
+            </p>
+          </AnimatedText>
+          <AnimatedText>
+            <p>
+              In my spare time I run Ultra Marathons and play Ultimate Frisbee
+              with{" "}
+              <a href="https://www.instagram.com/bristolopenultimate/">
+                Bristol Open
+              </a>{" "}
+              (and I&apos;m willing to talk your ears off about either!)
+            </p>
+          </AnimatedText>
+        </div>
 
         <img
-          src="/whangerei-heads.jpg"
-          alt="Dan sitting atop Whangerei Heads wearing frisbee kit looking to the sea"
-          width="100%"
-          style={{
-            maxWidth: "500px",
-            opacity: 0,
-            borderRadius: "3px",
-          }}
-          ref={img1Ref}
-        />
-      </section>
-
-      <section>
-        <AnimatedText>
-          <h2 id="about">about</h2>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            Hey 👋 I&apos;m Dan. I&apos;m a frontend developer and software
-            coach. Currently breaking down barriers and getting career changers
-            into tech with <a href="https://nology.io/">nology.io</a>
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            I advocate for greater awareness of mental health in the workplace,
-            and creating an inclusive environment where neurodivergent people
-            can be their whole selves.
-          </p>
-        </AnimatedText>
-        <AnimatedText>
-          <p>
-            In my spare time I run Ultra Marathons and play Ultimate Frisbee
-            with{" "}
-            <a href="https://www.instagram.com/bristolopenultimate/">
-              Bristol Open
-            </a>{" "}
-            (and I&apos;m willing to talk your ears off about either!)
-          </p>
-        </AnimatedText>
-
-        <img
-          style={{ maxWidth: "500px", opacity: 0, borderRadius: "3px" }}
+          className={styles.image}
           width="75%"
           src="/gmu01.jpg"
           alt="Dan running the Green Man Ultramarathon wearing a cap, hydration vest, and running gear"
-          ref={img2Ref}
+          ref={imgRef}
         />
       </section>
 
-      <section>
+      <section className={styles.projects} id="projects">
         <AnimatedText>
-          <h2 id="projects">projects</h2>
+          <h2>projects</h2>
         </AnimatedText>
         <AnimatedText>
           <p>
@@ -242,9 +241,9 @@ const Index: NextPage = () => {
         </AnimatedText>
       </section>
 
-      <section>
+      <section className={styles.contact} id="contact">
         <AnimatedText>
-          <h2 id="contact">contact</h2>
+          <h2>contact</h2>
         </AnimatedText>
         <AnimatedText>
           <p>
