@@ -24,6 +24,13 @@
   }
 }
 
+.about,
+.projects,
+.contact {
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
 .about {
   .image {
     opacity: 0;
@@ -80,7 +87,6 @@
   .about,
   .projects,
   .contact {
-    margin-top: 1rem;
     padding-top: 4rem;
   }
 
@@ -114,17 +120,15 @@
     }
 
     .container {
-      gap: 3rem;
-
       > * {
         max-width: 50%;
 
         &:nth-child(even) {
-          transform: translateX(-5%);
+          transform: translateX(-10%);
         }
 
         &:nth-child(odd) {
-          transform: translateX(5%);
+          transform: translateX(10%);
         }
       }
     }
