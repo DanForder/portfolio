@@ -120,11 +120,11 @@
         max-width: 50%;
 
         &:nth-child(even) {
-          transform: translateX(-25%);
+          transform: translateX(-5%);
         }
 
         &:nth-child(odd) {
-          transform: translateX(25%);
+          transform: translateX(5%);
         }
       }
     }

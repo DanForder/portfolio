@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-import Logo from "../components/Logo";
 import Metatags from "../components/Metatags";
 import Project from "../components/Project";
 import { generateUniqueId } from "../lib/commonUtils";
@@ -167,6 +166,7 @@ const Index: NextPage = () => {
                 documenting the process of delivering the content as a coach.
               </p>,
             ]}
+            image={<img src="/nology-favicon.png" alt="nology icon" />}
           />
           <Project
             heading="Working for Good Energy - Online Account"
@@ -192,6 +192,8 @@ const Index: NextPage = () => {
                 with event-driven Azure Functions.
               </p>,
             ]}
+            image={<img src="/ge-logo.png" alt="good energy logo" />}
+            inverse
           />
           <Project
             heading="Working for QES - Triangle Star Online"
@@ -231,6 +233,7 @@ const Index: NextPage = () => {
                 stakeholder expectations, and leading sprints.
               </p>,
             ]}
+            image={<img src="/qes-logo.webp" alt="qes logo" />}
           />
           <Project
             heading="Promptr"
@@ -248,6 +251,8 @@ const Index: NextPage = () => {
                 your own prompts, as well as generate random ones.
               </p>,
             ]}
+            image={<img src="/light-bulb.png" alt="a light bulb" />}
+            inverse
           />
           <Project
             heading="Castle Wars"
@@ -265,6 +270,7 @@ const Index: NextPage = () => {
                 destroy the opposing castle.
               </p>,
             ]}
+            image={<img src="/castle.png" alt="a castle" />}
           />
           <Project
             heading="Nonogram Puzzler"
@@ -290,6 +296,8 @@ const Index: NextPage = () => {
                 levels as a proof of concept.
               </p>,
             ]}
+            image={<img src="/puzzle-piece.png" alt="a puzzle piece" />}
+            inverse
           />
         </div>
       </section>

@@ -1,5 +1,15 @@
-.wrapper {
-  border-radius: 5px;
-  padding: 0.5rem;
-  height: 100%;
+.container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  .wrapper {
+    border-radius: 5px;
+    padding: 0.5rem;
+    height: 100%;
+  }
+
+  &.inverse {
+    flex-direction: row-reverse;
+  }
 }

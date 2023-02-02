@@ -7,3 +7,9 @@
     stroke: var(--color-text);
   }
 }
+
+@media screen and (min-width: 800px) {
+  .logo {
+    display: none;
+  }
+}
