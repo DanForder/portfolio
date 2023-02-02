@@ -26,7 +26,7 @@ const Header = ({ links }: HeaderProps) => {
   return (
     <header className={styles.container}>
       <Link className={styles.homeLink} href="/">
-        🏠
+        🚀
       </Link>
       <span className={styles.mainText}>
         <Logo />
