@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MouseEvent } from "react";
 import { useThemeContext } from "../lib/ThemeContext";
 import styles from "../styles/header.module.scss";
+import Logo from "./Logo";
 import Toggle from "./Toggle";
 
 type HeaderProps = {
@@ -27,7 +28,9 @@ const Header = ({ links }: HeaderProps) => {
       <Link className={styles.homeLink} href="/">
         🏠
       </Link>
-      <span className={styles.mainText}>DAN FORDER</span>
+      <span className={styles.mainText}>
+        <Logo />
+      </span>
       <nav className={styles.navbar}>
         <ul>
           {links.map(({ text, href, icon }) => (

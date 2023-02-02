@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import Logo from "../components/Logo";
 import Metatags from "../components/Metatags";
 import Project from "../components/Project";
 import { generateUniqueId } from "../lib/commonUtils";

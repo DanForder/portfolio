@@ -1,0 +1,9 @@
+.logo {
+  max-width: 200px;
+  max-height: 25px;
+  display: flex;
+
+  path {
+    stroke: var(--color-text);
+  }
+}
