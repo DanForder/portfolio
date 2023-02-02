@@ -1,0 +1,47 @@
+:root {
+  --color-background: black;
+  --color-text: white;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--color-text);
+}
+
+h1 {
+  margin: 2rem 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2rem 0 1.5rem 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  color: dodgerblue;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    font-size: 120%;
+  }
+}
