@@ -1,10 +1,66 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import type { NextPage } from "next";
+import { useEffect, useRef } from "react";
 import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import Metatags from "../components/Metatags";
 
 const Index: NextPage = () => {
+  const img1Ref = useRef<HTMLImageElement>(null);
+  const img2Ref = useRef<HTMLImageElement>(null);
+
+  const getXToCenterOfParent = (child: HTMLElement): number => {
+    if (!child.parentElement) return 0;
+    return (child.parentElement.offsetWidth - child.offsetWidth) / 2;
+  };
+
+  const getYToCenterOfParent = (child: HTMLElement): number => {
+    if (!child.parentElement) return 0;
+    return (child.parentElement.offsetHeight - child.offsetHeight) / 2;
+  };
+
+  const animateToCenter = (axis: "x" | "y", image: HTMLImageElement) => {
+    gsap.to(image, {
+      x: () => (axis === "x" ? getXToCenterOfParent(image) : 0),
+      y: () => (axis === "y" ? getYToCenterOfParent(image) : 0),
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: image,
+        start: "top 100%",
+        end: "top 70%",
+        toggleActions: "restart none none reset",
+      },
+    });
+  };
+
+  const fadeIn = (element: HTMLElement, duration: number) => {
+    gsap.to(element, {
+      opacity: 1,
+      duration,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 100%",
+        end: "top 70%",
+        toggleActions: "restart none none reset",
+      },
+    });
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    if (img1Ref.current === null) return;
+    fadeIn(img1Ref.current, 2);
+
+    if (img2Ref.current === null) return;
+    animateToCenter("x", img2Ref.current);
+  }, []);
+
   return (
     <Layout>
       <Metatags />
@@ -23,7 +79,12 @@ const Index: NextPage = () => {
           src="/whangerei-heads.jpg"
           alt="Dan sitting atop Whangerei Heads wearing frisbee kit looking to the sea"
           width="100%"
-          style={{ maxWidth: "500px" }}
+          style={{
+            maxWidth: "500px",
+            opacity: 0,
+            borderRadius: "3px",
+          }}
+          ref={img1Ref}
         />
       </section>
 
@@ -57,10 +118,11 @@ const Index: NextPage = () => {
         </AnimatedText>
 
         <img
-          style={{ maxWidth: "500px" }}
-          width="100%"
+          style={{ maxWidth: "500px", opacity: 0, borderRadius: "3px" }}
+          width="75%"
           src="/gmu01.jpg"
-          alt=""
+          alt="Dan running the Green Man Ultramarathon wearing a cap, hydration vest, and running gear"
+          ref={img2Ref}
         />
       </section>
 
