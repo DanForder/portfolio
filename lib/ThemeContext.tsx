@@ -29,6 +29,16 @@ export const ThemeContext = createContext<ThemeContextType | null>(null);
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setTheme(
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+      );
+    }
+  }, []);
+
   const updateTheme = (newValue: ThemeType) => {
     return setTheme(newValue);
   };
