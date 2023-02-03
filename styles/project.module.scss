@@ -5,6 +5,11 @@
   align-items: center;
   margin-top: 2rem;
   gap: 1rem;
+  transition: 0.15s ease-in all;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   img {
     max-width: 40%;
