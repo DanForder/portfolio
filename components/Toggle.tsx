@@ -1,10 +1,4 @@
-import {
-  ChangeEventHandler,
-  MouseEvent,
-  MouseEventHandler,
-  PropsWithChildren,
-  useState,
-} from "react";
+import { MouseEvent, PropsWithChildren } from "react";
 import styles from "../styles/toggle.module.scss";
 
 type ToggleProps = {
@@ -20,10 +14,7 @@ const Toggle = ({
   toggled,
   onClick,
 }: PropsWithChildren<ToggleProps>) => {
-  const [checked, setIsChecked] = useState(toggled);
-
   const onToggle = (e: MouseEvent<HTMLInputElement>) => {
-    setIsChecked((prev) => !prev);
     onClick(e);
   };
 
@@ -33,7 +24,7 @@ const Toggle = ({
         id={id}
         type="checkbox"
         onClick={onToggle}
-        defaultChecked={checked}
+        defaultChecked={toggled}
         className={styles.input}
       />
       <span className={styles.toggle}></span>
