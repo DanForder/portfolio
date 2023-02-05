@@ -14,16 +14,12 @@ const Toggle = ({
   toggled,
   onClick,
 }: PropsWithChildren<ToggleProps>) => {
-  const onToggle = (e: MouseEvent<HTMLInputElement>) => {
-    onClick(e);
-  };
-
   return (
     <label htmlFor={id} className={styles.label}>
       <input
         id={id}
         type="checkbox"
-        onClick={onToggle}
+        onClick={(e) => onClick(e)}
         defaultChecked={toggled}
         className={styles.input}
       />

@@ -2,17 +2,13 @@ import Link from "next/link";
 import { MouseEvent } from "react";
 import { useThemeContext } from "../lib/ThemeContext";
 import styles from "../styles/header.module.scss";
+import { CustomLink } from "../types/CustomLink";
+import IconLinks from "./IconLinks";
 import Logo from "./Logo";
 import Toggle from "./Toggle";
 
 type HeaderProps = {
   links: CustomLink[];
-};
-
-type CustomLink = {
-  text: string;
-  href: string;
-  icon: string;
 };
 
 const Header = ({ links }: HeaderProps) => {
@@ -32,16 +28,7 @@ const Header = ({ links }: HeaderProps) => {
         <Logo />
       </span>
       <nav className={styles.navbar}>
-        <ul>
-          {links.map(({ text, href, icon }) => (
-            <li key={href} className={styles.listItem}>
-              <Link href={`#${href}`} scroll={false}>
-                <span>{icon}</span>
-                <span>{text}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <IconLinks links={links} type="clean" />
       </nav>
       <Toggle
         id="theme-toggle"
