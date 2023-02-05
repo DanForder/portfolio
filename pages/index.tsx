@@ -2,8 +2,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import type { NextPage } from "next";
 import { useEffect, useRef } from "react";
+import {
+  AiOutlineGithub,
+  AiOutlineLinkedin,
+  AiOutlineMail,
+} from "react-icons/ai";
 import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
+import IconLinks from "../components/IconLinks";
 import Layout from "../components/Layout";
 import Metatags from "../components/Metatags";
 import Project from "../components/Project";
@@ -68,9 +74,9 @@ const Index: NextPage = () => {
       <Metatags />
       <Header
         links={[
-          { text: "about", href: "about", icon: "🖋️" },
-          { text: "projects", href: "projects", icon: "🛠️" },
-          { text: "contact", href: "contact", icon: "🤙" },
+          { text: "about", href: "#about", icon: "🖋️" },
+          { text: "projects", href: "#projects", icon: "🛠️" },
+          { text: "contact", href: "#contact", icon: "🤙" },
         ]}
       />
       <AnimatedText>
@@ -307,20 +313,28 @@ const Index: NextPage = () => {
           <h2>contact</h2>
         </AnimatedText>
         <AnimatedText>
-          <p>
-            Reach me at{" "}
-            <a href="mailto:danforder@gmail.com?subject=Email query from portfolio">
-              danfrdr@gmail.com
-            </a>
-            . Or on Linkedin at{" "}
-            <a
-              href="https://www.linkedin.com/in/dan-forder/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              dan-forder
-            </a>
-          </p>
+          <IconLinks
+            type="tile"
+            links={[
+              {
+                href: "mailto:danforder@gmail.com?subject=Email query from portfolio",
+                icon: <AiOutlineMail />,
+                text: "Mail",
+              },
+              {
+                href: "https://www.linkedin.com/in/dan-forder/",
+                icon: <AiOutlineLinkedin />,
+                text: "LinkedIn",
+                target: "_blank",
+              },
+              {
+                href: "https://github.com/DanForder",
+                icon: <AiOutlineGithub />,
+                text: "Github",
+                target: "_blank",
+              },
+            ]}
+          />
         </AnimatedText>
       </section>
     </Layout>
